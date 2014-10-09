@@ -1,5 +1,5 @@
 class Item
-
+  attr_accessor :description   # automatically creates setter,getter and instance variable for description
   def initialize(description, price)
     @id = rand(100..999)
     @description = description
@@ -8,6 +8,8 @@ class Item
 
   end
 
+
+=begin
   #getter
   def description
     return @description
@@ -17,6 +19,7 @@ class Item
   def description= (description)
     @description = description
   end
+=end
 
   def price=(price)
     @price = price
@@ -52,7 +55,7 @@ shirt.add_size(12)
 puts shirt.inspect
 puts shirt
 
-#change descrption
+#change description
 puts shirt.description
 shirt.description = ('white t-shirt')
 #add size
