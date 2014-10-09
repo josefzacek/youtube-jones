@@ -87,3 +87,7 @@ puts shirt
 puts shirt.print_size
 
 
+#prints id
+puts shirt.id
+
+
