@@ -8,10 +8,14 @@ class Item
 
   attr_reader :id #creates getter for id, no getter id method needed
 
+  @@last_id = 0  #set @last_id variable to zero
+
   def initialize(description, price)
 
     @@store = 'Daves store' #class variable - changes value in all objects created from that class
-    @id = rand(100..999)
+    #@id = rand(100..999)
+    @id = @@last_id + 1
+    @@last_id += 1
     @description = description
     @price = price
     @size = []
@@ -26,6 +30,11 @@ class Item
   #setter
   def store=(store)
     @@store = store
+  end
+
+
+  def last_id
+    return @@last_id
   end
 
   # def id
@@ -116,5 +125,14 @@ shirt.store =("jim shop") #name changed in one object but all objects were effec
 #print store
 puts shirt.store
 puts pants.store
+
+puts pants.last_id
+
+socks = Item.new('pink socks', 1.07)
+
+
+puts shirt
+puts pants
+puts socks
 
 
