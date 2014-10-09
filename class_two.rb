@@ -18,6 +18,10 @@ class Item
     @description = description
   end
 
+  def price=(price)
+    @price = price
+  end
+
   #add item to array
   def add_size (size)
     @size << size
@@ -28,7 +32,12 @@ class Item
     @size.delete(size)
   end
 
-  #this prints result ()
+  #print all sizes
+  def print_size
+    return "The shirt sizes available are #{@size.join(", ")}"
+  end
+
+  #this prints result  // puts shirt
   def to_s
     return "The id is #{@id}, the description is #{@description} and price is #{@price}, sizes: #{@size.join(', ')} "
   end
@@ -50,8 +59,18 @@ shirt.description = ('white t-shirt')
 shirt.add_size(122)
 puts shirt
 
+#print all sizes
+puts shirt.print_size
+
 #remove size
 shirt.remove_size(12)
 puts shirt
+
+#change price
+shirt.price= (76)
+puts shirt
+
+#print all sizes
+puts shirt.print_size
 
 
