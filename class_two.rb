@@ -1,17 +1,31 @@
 class Item
   attr_accessor :description   # automatically creates setter,getter and instance variable for description
 
+  #attr_accessor :description, :price
+
   #attr_reader :description # creates getter no need to create method
   #attr_writer :description # creates setter no need to create method
 
-  attr_reader :id #creates reader for id, no getter id method needed
+  attr_reader :id #creates getter for id, no getter id method needed
 
   def initialize(description, price)
+
+    @@store = 'Daves store' #class variable - changes value in all objects created from that class
     @id = rand(100..999)
     @description = description
     @price = price
     @size = []
 
+  end
+
+  # getter
+  def store
+    return @@store
+  end
+
+  #setter
+  def store=(store)
+    @@store = store
   end
 
   # def id
@@ -59,6 +73,7 @@ end
 
 #create item
 shirt = Item.new('shirt', 4.40)
+pants = Item.new('blue pants', 27.00)
 
 #add size
 shirt.add_size(12)
@@ -89,5 +104,17 @@ puts shirt.print_size
 
 #prints id
 puts shirt.id
+
+#print store
+puts shirt.store
+puts pants.store
+
+#change store name store
+shirt.store =("jim shop") #name changed in one object but all objects were effected -> @@class variable
+
+
+#print store
+puts shirt.store
+puts pants.store
 
 
