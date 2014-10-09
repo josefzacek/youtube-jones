@@ -4,6 +4,8 @@ class Item
   #attr_reader :description # creates getter no need to create method
   #attr_writer :description # creates setter no need to create method
 
+  attr_reader :id #creates reader for id, no getter id method needed
+
   def initialize(description, price)
     @id = rand(100..999)
     @description = description
@@ -11,6 +13,10 @@ class Item
     @size = []
 
   end
+
+  # def id
+  #   return @id
+  # end
 
 
 =begin
