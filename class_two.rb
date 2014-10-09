@@ -1,5 +1,9 @@
 class Item
   attr_accessor :description   # automatically creates setter,getter and instance variable for description
+
+  #attr_reader :description # creates getter no need to create method
+  #attr_writer :description # creates setter no need to create method
+
   def initialize(description, price)
     @id = rand(100..999)
     @description = description
