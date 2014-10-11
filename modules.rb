@@ -21,6 +21,11 @@ end
 
 
 
+# include module if in different file
+# require 'trig.rb'
+
+
+
 puts Trig.sin(Trig::PI/4)
 
 puts Moral.sin(Moral::VERY_BAD)
