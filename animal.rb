@@ -7,6 +7,11 @@ class Animal
     @color = color
   end
 
-
-
 end
+
+
+
+tiger = Animal.new("Tiger", "orange")
+
+
+puts tiger.inspect
