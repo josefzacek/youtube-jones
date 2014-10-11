@@ -51,5 +51,27 @@ print_me_two(abc)
 
 puts "\n......"
 
+abc.each do |row|
+  puts row.join(' ')
+end
+
+puts 'create 10 x 10 array'
+
+box = []
+
+10.times do |row|
+  box[row] = []
+  10.times do
+    box[row] << 0
+  end
+end
+
+box.each do |row|
+  puts row.join(' ')
+end
+
+
+
+
 
 
