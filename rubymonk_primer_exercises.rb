@@ -127,3 +127,12 @@ puts artax
 
 
 puts "====="
+
+puts [1, 2, 3, 4].inject(8) { |result, element| result + element } # => 10
+
+puts "====="
+
+def hi
+  return lambda { "Do or do not" }
+  end
+puts hi
