@@ -31,6 +31,11 @@ end
 
 class Zebra < Animal
 
+  def initialize(name, color, stripes)
+    @stripes = stripes
+    return super(name, color)
+  end
+
   def speak     # needs to be the same method name
     return super + " Mufassaaa"
   end
@@ -58,7 +63,7 @@ puts puma.identify
 puts tiger.identify
 
 
-cathy = Zebra.new('cathy', 'black and white')
+cathy = Zebra.new('cathy', 'black and white', 5)
 
 puts cathy.inspect
 
