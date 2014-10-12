@@ -67,6 +67,19 @@ zoo.each do |animal|
 end
 
 
+zoo.each do |animal|
+  puts "#{animal.speak}"
+end
+
+# get zebras with more than 50 stripes
+zoo.each do |animal|
+  if animal.stripes > 50
+    puts "#{animal.name} has #{animal.stripes} #{animal.color} stripes"
+  end
+end
+
+
+
 =begin
 tiger = Animal.new("Tiger", "orange")
 puts tiger.inspect
