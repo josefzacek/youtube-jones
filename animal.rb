@@ -15,6 +15,10 @@ class Animal
     return "my name is #{@name} and I am #{self.class}"
   end
 
+  def to_csv
+    return "#{@name},#{@color}"
+  end
+
 end
 
 
@@ -39,6 +43,10 @@ class Zebra < Animal
 
   def speak     # needs to be the same method name
     return super + " Mufassaaa"
+  end
+
+  def to_csv
+    return  super + ",#{@stripes}"
   end
 end
 
@@ -77,6 +85,13 @@ zoo.each do |animal|
     puts "#{animal.name} has #{animal.stripes} #{animal.color} stripes"
   end
 end
+
+zoo.each do |animal|
+  puts "#{animal.to_csv}"
+end
+
+
+
 
 
 
