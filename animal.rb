@@ -30,6 +30,7 @@ end
 
 
 class Zebra < Animal
+  attr_reader :stripes
 
   def initialize(name, color, stripes)
     @stripes = stripes
@@ -46,6 +47,27 @@ class Hyena < Animal
 end
 
 
+# main program
+
+zoo = []
+
+10.times do |num|
+  zoo << Zebra.new("Zebra#{num}", "black and White", rand(20..100))
+end
+
+puts zoo.inspect
+
+puts zoo.count
+
+puts zoo[rand(0..zoo.count - 1)].speak
+
+zoo.each do |animal|
+  puts "#{animal.name} has #{animal.stripes} #{animal.color} stripes"
+
+end
+
+
+=begin
 tiger = Animal.new("Tiger", "orange")
 puts tiger.inspect
 
@@ -76,4 +98,6 @@ mick = Hyena.new('mick', 'brown')
 
 puts mick.speak
 puts mick.identify
+
+=end
 
