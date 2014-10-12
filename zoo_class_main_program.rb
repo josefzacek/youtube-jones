@@ -29,6 +29,15 @@ class Zoo
   end
 
 
+  def make_noise
+    return_string = ""
+    @cage.each do |animal|
+      return_string = return_string + animal.speak + "\n"
+    end
+    return return_string
+  end
+
+
 end
 =begin
 zoo = []
@@ -111,10 +120,17 @@ puts zoo.inspect
 10.times do |num|
   zoo.add_animal(Zebra.new("Zebra#{num}", "black and White", rand(20..100)))
 end
+5.times do |num|
+  zoo.add_animal(Tiger.new("Tigger#{num}", "orange"))
+end
 
 puts zoo.inspect
 
 puts zoo.inventory
 
 puts "Zoo contains #{zoo.count} animals"
+
+puts zoo.make_noise
+
+
 
