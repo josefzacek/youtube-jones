@@ -2,9 +2,11 @@
 
 
 class Menu
+  attr_reader :quit
 
   def initialize(*menu_args)
     @menu_args = menu_args
+    @quit = @menu_args.length
   end
 
 end
@@ -16,7 +18,9 @@ menu = Menu.new(
     'Quit'
 )
 
+while (choice = menu.get_menu_choice) != menu.quit
 
+end
 
 
 # user_choice = 0
