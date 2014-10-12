@@ -16,7 +16,7 @@ class Animal
   end
 
   def to_csv
-    return "#{@name},#{@color}"
+    return "#{@name}\t#{@color}\t"
   end
 
 end
@@ -46,7 +46,7 @@ class Zebra < Animal
   end
 
   def to_csv
-    return  super + ",#{@stripes}"
+    return  super + "\t#{@stripes}"
   end
 end
 

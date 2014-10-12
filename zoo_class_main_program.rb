@@ -1,6 +1,36 @@
 
 # main program
 
+
+require_relative "zoo_class"
+
+
+class Zoo
+
+  def initialize
+    @cage = []
+  end
+
+  def add_animal(animal)
+    @cage << animal
+  end
+
+  def inventory
+    return_string = "Name\tColor\t\t\t Stripes \n"
+    @cage.each do |animal|
+      return_string = return_string + animal.to_csv + "\n"
+    end
+
+    return return_string
+  end
+
+  def count
+    return @cage.count
+  end
+
+
+end
+=begin
 zoo = []
 
 10.times do |num|
@@ -34,10 +64,7 @@ zoo.each do |animal|
   puts "#{animal.to_csv}"
 end
 
-
-
-
-
+=end
 
 =begin
 tiger = Animal.new("Tiger", "orange")
@@ -73,4 +100,21 @@ puts mick.identify
 
 =end
 
+zoo = Zoo.new
+
+puts zoo.inspect
+
+
+# zoo.add_animal('sheep')
+# zoo.add_animal('cow')
+
+10.times do |num|
+  zoo.add_animal(Zebra.new("Zebra#{num}", "black and White", rand(20..100)))
+end
+
+puts zoo.inspect
+
+puts zoo.inventory
+
+puts "Zoo contains #{zoo.count} animals"
 
