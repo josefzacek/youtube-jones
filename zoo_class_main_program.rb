@@ -17,9 +17,9 @@ class Zoo
 
   def inventory
     return_string = "Name\tColor\t\t\t Stripes \n"
-    @cage.each do |animal|
-      return_string = return_string + animal.to_csv + "\n"
-    end
+    @cage.each_with_index do |animal, index|
+      return_string = return_string + "#{index + 1} ." + animal.to_csv + "\n"
+  end
 
     return return_string
   end
@@ -35,6 +35,12 @@ class Zoo
       return_string = return_string + animal.speak + "\n"
     end
     return return_string
+  end
+
+
+  def find(record_number)
+    animal_name = @cage[record_number - 1]
+    return animal_name.to_csv
   end
 
 
@@ -124,6 +130,10 @@ end
   zoo.add_animal(Tiger.new("Tigger#{num}", "orange"))
 end
 
+3.times do |num|
+  zoo.add_animal(Hyena.new("Tina#{num}", "brown"))
+end
+
 puts zoo.inspect
 
 puts zoo.inventory
@@ -131,6 +141,12 @@ puts zoo.inventory
 puts "Zoo contains #{zoo.count} animals"
 
 puts zoo.make_noise
+
+print "View animal: "
+user_choice = gets.to_i
+
+puts zoo.find(user_choice)
+
 
 
 
