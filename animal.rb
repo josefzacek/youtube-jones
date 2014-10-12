@@ -10,6 +10,7 @@ class Animal
   def speak
     return "hello my name is #{@name}"
   end
+
   def identify
     return "my name is #{@name} and I am #{self.class}"
   end
@@ -23,7 +24,6 @@ class Tiger < Animal
     #return 'grrrr'
     #return super  #execute my parents methods
     return super + " Grrr"  #execute my parents methods and string defined
-
   end
 
 end
