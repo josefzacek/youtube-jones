@@ -45,6 +45,7 @@ while (choice = menu.get_menu_choice) != menu.quit
     when 4
       puts 'Change weapon'
   end
+
 end
 
 
